@@ -1,0 +1,85 @@
+// ==========================================================================
+// PASOS DE TRABAJO Y VALORES — usados en servicios.html y nosotros.html
+// Estilos avanzados: transform + transition en hover para dar dinamismo.
+// ==========================================================================
+
+.process-steps {
+  @include grid(repeat(auto-fit, minmax(220px, 1fr)), 24px);
+  counter-reset: step;
+}
+
+.process-step {
+  position: relative;
+  padding: 28px 24px 24px;
+  border: 1px solid $gray-200;
+  border-radius: $radius;
+  background: $white;
+  @include transition(transform $dur-base ease, box-shadow $dur-base ease);
+
+  &::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: $font-head;
+    font-size: 13px;
+    font-weight: 700;
+    color: $blue-dark;
+    letter-spacing: .06em;
+  }
+
+  h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 14px;
+  }
+
+  p {
+    font-size: 13.5px;
+    color: $gray-600;
+    margin-top: 10px;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(20, 23, 26, .1);
+  }
+}
+
+.value-cards {
+  @include grid(repeat(auto-fit, minmax(220px, 1fr)), 24px);
+}
+
+.value-card {
+  padding: 28px 24px;
+  border-radius: $radius;
+  background: $gray-50;
+  @include transition(transform $dur-base ease, background $dur-base ease);
+
+  .value-icon {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    color: $blue-dark;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+
+  p {
+    font-size: 13.5px;
+    color: $gray-600;
+    margin-top: 8px;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+    background: $gray-100;
+  }
+}

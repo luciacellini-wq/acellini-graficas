@@ -1,0 +1,88 @@
+// ==========================================================================
+// BOOTSTRAP OVERRIDES
+// Bootstrap se carga por CDN (grid, navbar collapse/dropdown y utilidades).
+// Este partial elimina su apariencia por defecto (azul, radios genericos)
+// y la reemplaza por la identidad visual de A. Cellini. Se compila despues
+// de bootstrap.min.css en el <head>, por lo que estas reglas prevalecen.
+// ==========================================================================
+
+.navbar-toggler {
+  border: none;
+  padding: 6px;
+  box-shadow: none !important;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background: $black;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: $black;
+  }
+
+  &::before {
+    top: -7px;
+  }
+
+  &::after {
+    top: 7px;
+  }
+}
+
+.dropdown-menu {
+  border: 1px solid $gray-200;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 12px 28px rgba(20, 23, 26, .12);
+}
+
+.dropdown-item {
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 9px 12px;
+
+  &:hover,
+  &:focus {
+    background: $gray-50;
+    color: $black;
+  }
+
+  &.active,
+  &:active {
+    background: $black;
+    color: $white;
+  }
+}
+
+// Botones de Bootstrap que puedan colarse en algun componente: alineados
+// a la identidad en vez del azul/celeste por defecto del framework.
+.btn:focus,
+.btn.focus {
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: $black;
+  box-shadow: none;
+}
+
+// Utilidades de contenedor de Bootstrap: las dejamos coexistir con
+// nuestro propio .section, alineando el ancho maximo a $container.
+.container,
+.container-fluid {
+  max-width: $container;
+}

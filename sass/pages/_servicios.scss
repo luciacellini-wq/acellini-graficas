@@ -1,0 +1,27 @@
+// ==========================================================================
+// PAGINA SERVICIOS — variante clara de las service-tile para usarlas
+// fuera de la franja oscura (.services-band) del home
+// ==========================================================================
+
+.services-grid-light {
+  @include grid(repeat(auto-fit, minmax(220px, 1fr)), 20px);
+
+  .service-tile {
+    border: 1px solid $gray-200;
+    background: $white;
+    @include transition(transform $dur-base ease, box-shadow $dur-base ease);
+
+    h4 {
+      color: $black;
+    }
+
+    p {
+      color: $gray-600;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(20, 23, 26, .08);
+    }
+  }
+}

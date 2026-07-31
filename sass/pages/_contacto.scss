@@ -1,0 +1,28 @@
+// ==========================================================================
+// PAGINA CONTACTO
+// ==========================================================================
+
+.contact-grid {
+  @include grid(.8fr 1.2fr, 56px);
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info {
+  h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 14px;
+    font-size: 14.5px;
+    color: $gray-600;
+  }
+
+  a:hover {
+    color: $blue-dark;
+  }
+}

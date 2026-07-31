@@ -1,0 +1,11 @@
+// ==========================================================================
+// PAGINA MAQUINAS (catalogo) — el grueso de los estilos vive en
+// _chips.scss y _cards.scss; aca solo ajustes propios de esta pagina
+// ==========================================================================
+
+.catalog-section {
+  .product-note {
+    border-top: 1px solid $gray-200;
+    padding-top: 28px;
+  }
+}

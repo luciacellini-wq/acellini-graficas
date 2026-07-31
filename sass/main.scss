@@ -1,0 +1,38 @@
+// ==========================================================================
+// MAIN.SCSS — punto de entrada. Se compila a /css/main.css
+// (ver build/compile_scss.py — no hay build-step de npm en este entorno,
+// asi que el arbol de partials de abajo se compila con un compilador propio
+// que soporta variables, nesting, mixins, extend, partials y @media anidados).
+//
+// Orden de carga en el HTML: 1) Bootstrap CDN  2) main.css (este archivo)
+// De esa forma nuestras reglas siempre ganan sobre el look generico de
+// Bootstrap, sin necesidad de !important.
+// ==========================================================================
+
+// 1. Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Base
+@import 'base/reset';
+
+// 3. Layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/section';
+
+// 4. Componentes
+@import 'components/buttons';
+@import 'components/chips';
+@import 'components/cards';
+@import 'components/marquee';
+@import 'components/forms';
+@import 'components/timeline';
+@import 'components/bootstrap-overrides';
+
+// 5. Paginas
+@import 'pages/home';
+@import 'pages/maquinas';
+@import 'pages/servicios';
+@import 'pages/nosotros';
+@import 'pages/contacto';

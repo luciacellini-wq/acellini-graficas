@@ -1,0 +1,185 @@
+// ==========================================================================
+// PAGINA DE INICIO — hero, franja de servicios, historia (teaser) y stats
+// ==========================================================================
+
+.hero {
+  @include container;
+  @include grid(1.05fr 1fr, 56px);
+  align-items: center;
+  padding: 64px 32px 96px;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+}
+
+.hero-title {
+  @include heading-upper(clamp(38px, 5.2vw, 64px));
+}
+
+.hero-lead {
+  margin-top: 22px;
+  font-size: 16px;
+  color: $gray-600;
+  max-width: 460px;
+}
+
+.hero-actions {
+  @include flex($align: center, $gap: 8px);
+  margin-top: 32px;
+}
+
+.hero-media {
+  position: relative;
+}
+
+.hero-carousel {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $gray-100;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .6s ease;
+
+  &.is-active {
+    opacity: 1;
+  }
+}
+
+.hero-carousel-index {
+  @include flex($align: center, $gap: 12px);
+  margin-top: 16px;
+  font-size: 13px;
+  color: $gray-600;
+  font-weight: 600;
+}
+
+.carousel-track {
+  flex: 1;
+  height: 2px;
+  background: $gray-200;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#carouselBar {
+  display: block;
+  height: 100%;
+  width: 33%;
+  background: $black;
+  transition: width .3s ease;
+}
+
+.services-band {
+  background: $black;
+  color: $white;
+}
+
+.services-inner {
+  @include container;
+  @include grid(1fr 1.1fr, 56px);
+  align-items: center;
+  padding: 96px 32px;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.services-heading {
+  h2 {
+    color: $white;
+    @include heading-upper(clamp(26px, 3vw, 38px));
+  }
+
+  p {
+    color: $gray-400;
+    margin-top: 18px;
+    font-size: 15px;
+    max-width: 420px;
+  }
+
+  .link-arrow {
+    display: inline-block;
+    margin-top: 24px;
+  }
+}
+
+.services-tiles {
+  @include grid(1fr 1fr, 16px);
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.history-grid {
+  @include grid(.9fr 1.1fr, 56px);
+  align-items: start;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.history-quote {
+  font-family: $font-head;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.35;
+  font-style: normal;
+  margin: 0;
+  padding-left: 24px;
+  border-left: 3px solid $black;
+}
+
+.history-body {
+  p {
+    color: $gray-600;
+    font-size: 15px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hero-stats {
+  @include flex($gap: 48px, $wrap: wrap);
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid $gray-200;
+
+  @media (max-width: $bp-mobile) {
+    gap: 28px;
+  }
+}
+
+.stat {
+  @include flex($align: baseline, $gap: 2px, $wrap: wrap);
+  max-width: 220px;
+}
+
+.stat-number,
+.stat-suffix {
+  font-family: $font-head;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.stat-label {
+  width: 100%;
+  font-size: 13.5px;
+  color: $gray-600;
+  margin-top: 4px;
+}

@@ -1,0 +1,55 @@
+// ==========================================================================
+// BOTONES — reemplaza por completo el estilo generico de Bootstrap .btn
+// ==========================================================================
+
+.btn {
+  @include flex($align: center, $gap: 8px);
+  display: inline-flex;
+  padding: 14px 26px;
+  border-radius: $radius-pill;
+  font-weight: 600;
+  font-size: 15px;
+  @include transition(transform $dur-fast $ease, background $dur-fast $ease);
+
+  &-primary {
+    background: $black;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background: $blue-dark;
+      transform: translateY(-2px);
+      color: $white;
+    }
+  }
+
+  &-small {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  &-text {
+    color: $black;
+    font-weight: 600;
+    border-bottom: 2px solid $gray-300;
+    border-radius: 0;
+    padding: 14px 4px;
+    background: none;
+
+    &:hover {
+      border-color: $black;
+      color: $black;
+    }
+  }
+
+  &-outline-light {
+    border: 1.5px solid rgba(255, 255, 255, .5);
+    color: $white;
+    background: none;
+
+    &:hover {
+      background: rgba(255, 255, 255, .12);
+      color: $white;
+    }
+  }
+}

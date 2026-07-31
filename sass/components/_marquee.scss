@@ -1,0 +1,40 @@
+// ==========================================================================
+// MARQUEE DE MARCAS — animacion CSS infinita
+// ==========================================================================
+
+.brands-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 8px 0 4px;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+
+  &:hover .brands-track {
+    animation-play-state: paused;
+  }
+}
+
+.brands-track {
+  @include flex($align: center, $gap: 64px);
+  width: max-content;
+  animation: brandsMarquee 26s linear infinite;
+
+  img {
+    height: 28px;
+    width: auto;
+    flex-shrink: 0;
+    filter: grayscale(1);
+    opacity: .55;
+    @include transition(opacity $dur-base ease, filter $dur-base ease);
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+  }
+}
+
+@keyframes brandsMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
