@@ -1,0 +1,124 @@
+// ==========================================================================
+// HEADER / NAVEGACION
+// Construido sobre el navbar de Bootstrap (navbar, navbar-collapse,
+// dropdown) pero completamente reskineado: sin azul ni sombras genericas.
+// ==========================================================================
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $gray-200;
+}
+
+.header-inner {
+  @include container;
+  @include flex($align: center, $justify: space-between, $gap: 24px, $wrap: wrap);
+  padding: 16px 32px;
+
+  @media (max-width: $bp-mobile) {
+    padding: 14px 20px;
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+
+  &-line-1 {
+    font-family: $font-head;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: .02em;
+  }
+
+  &-line-2 {
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: $gray-600;
+  }
+}
+
+.navbar-nav {
+  @include flex($align: center, $gap: 28px, $wrap: wrap);
+}
+
+.nav-link {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: $gray-800 !important;
+  padding: 8px 0 !important;
+
+  &:hover {
+    color: $blue-dark !important;
+  }
+
+  &.active {
+    color: $blue-dark !important;
+  }
+}
+
+.has-dropdown {
+  position: relative;
+
+  // En desktop, ademas del click via JS de Bootstrap, permitimos hover
+  @media (min-width: 992px) {
+    &:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      display: block;
+      @include transition(all, $dur-fast);
+    }
+  }
+}
+
+.header-actions {
+  @include flex($align: center, $gap: 16px);
+}
+
+// Panel colapsado en mobile/tablet (breakpoint lg de Bootstrap = 992px)
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    width: 100%;
+    background: $white;
+    margin-top: 12px;
+    padding: 8px 0 16px;
+
+    .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 14px 0 !important;
+      width: 100%;
+      border-bottom: 1px solid $gray-100;
+    }
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 0 16px;
+  }
+
+  .header-actions .btn-small {
+    display: none;
+  }
+}

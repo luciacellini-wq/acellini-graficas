@@ -1,0 +1,42 @@
+// ==========================================================================
+// VARIABLES — paleta, tipografia y medidas base del sitio A. Cellini
+// ==========================================================================
+
+// Color
+$black: #14171a;
+$white: #ffffff;
+$gray-50: #f6f7f8;
+$gray-100: #eef0f2;
+$gray-200: #e1e5e9;
+$gray-300: #c7cdd3;
+$gray-400: #9aa1a9;
+$gray-600: #5b6168;
+$gray-800: #2b2f33;
+$blue: #0ea5e9;
+$blue-dark: #0369a1;
+$cyan: #00b7d6;
+$magenta: #e8388a;
+$yellow: #ffcd1f;
+$success: #1d7a4c;
+$error: #c0392b;
+
+// Radios y contenedor
+$radius: 16px;
+$radius-lg: 28px;
+$radius-pill: 100px;
+$container: 1240px;
+
+// Tipografia
+$font-head: 'Space Grotesk', 'Inter', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+// Breakpoints (se usan tal cual dentro de @media anidados)
+$bp-tablet: 980px;
+$bp-mobile: 620px;
+$bp-grid-md: 860px;
+
+// Transiciones
+$ease: ease;
+$dur-fast: .15s;
+$dur-base: .2s;
+$dur-slow: .6s;

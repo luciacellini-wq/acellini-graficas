@@ -1,0 +1,82 @@
+// ==========================================================================
+// FOOTER
+// ==========================================================================
+
+.site-footer {
+  background: $black;
+  color: $gray-400;
+}
+
+.footer-inner {
+  @include container;
+  @include grid(1.4fr 1fr 1fr 1.2fr, 32px);
+  padding: 72px 32px 40px;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+    padding: 56px 20px 32px;
+  }
+}
+
+.footer-logo {
+  font-family: $font-head;
+  font-size: 19px;
+  font-weight: 700;
+  color: $white;
+}
+
+.footer-brand p {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.footer-desc {
+  color: $gray-600;
+  margin-top: 16px !important;
+  max-width: 260px;
+}
+
+.footer-col {
+  h4 {
+    color: $white;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 16px;
+  }
+
+  li {
+    margin-bottom: 10px;
+    font-size: 13.5px;
+  }
+
+  a:hover {
+    color: $white;
+  }
+}
+
+.footer-bottom {
+  @include container;
+  @include flex($align: center, $justify: space-between);
+  padding: 24px 32px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  font-size: 12.5px;
+}
+
+.to-top {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .2);
+  color: $white;
+  @include flex($align: center, $justify: center);
+  @include transition();
+
+  &:hover {
+    background: rgba(255, 255, 255, .1);
+  }
+}

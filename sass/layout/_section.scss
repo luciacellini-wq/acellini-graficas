@@ -1,0 +1,120 @@
+// ==========================================================================
+// LAYOUT DE SECCIONES — contenedores genericos usados en todas las paginas
+// ==========================================================================
+
+.section {
+  @include container;
+  padding: 96px 32px;
+
+  &.alt {
+    background: $gray-50;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+
+    > * {
+      @include container;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    padding: 64px 20px;
+  }
+}
+
+.section-head {
+  margin-bottom: 48px;
+
+  h2 {
+    @include heading-upper(clamp(26px, 3vw, 36px));
+  }
+
+  &.split {
+    @include flex($align: center, $justify: space-between, $gap: 16px, $wrap: wrap);
+  }
+}
+
+.section-lead {
+  color: $gray-600;
+  margin-top: 14px;
+  max-width: 520px;
+  font-size: 15px;
+}
+
+.link-arrow {
+  font-weight: 600;
+  font-size: 14.5px;
+
+  &.light {
+    color: $white;
+  }
+}
+
+.page-header {
+  background: $gray-50;
+  padding: 48px 32px 40px;
+
+  &-inner {
+    @include container;
+
+    p:last-child {
+      margin-top: 14px;
+      color: $gray-600;
+      max-width: 620px;
+      font-size: 15px;
+    }
+  }
+
+  h1 {
+    @include heading-upper(clamp(30px, 4vw, 44px));
+    margin-top: 10px;
+  }
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: $gray-600;
+
+  a {
+    color: $gray-600;
+
+    &:hover {
+      color: $blue-dark;
+    }
+  }
+}
+
+.cta-banner {
+  background: $blue-dark;
+  color: $white;
+
+  &-inner {
+    @include container;
+    @include flex($align: center, $justify: space-between, $gap: 20px, $wrap: wrap);
+    padding: 44px 32px;
+  }
+}
+
+.cta-title {
+  font-family: $font-head;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.cta-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, .75);
+  margin-top: 4px;
+}
+
+// Animacion de aparicion al hacer scroll (complementa a la libreria AOS)
+.reveal {
+  @include visually-fade-in;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
