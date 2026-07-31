@@ -1,0 +1,17 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python (build/compile_scss.py)
+__pycache__/
+*.pyc
+
+# Stale legacy files from a previous version of the site (root only).
+# Kept on disk but excluded from the repo; pages/ counterparts are NOT affected.
+/maquinas.html
+/script.js
+/styles.css
