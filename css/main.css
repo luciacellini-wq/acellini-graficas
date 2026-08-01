@@ -109,7 +109,7 @@ button {
   color: #0369a1 !important;
 }
 .nav-link.active {
-  color: #0369a1 !important;
+  color: #2b2f33 !important;
 }
 .has-dropdown {
   position: relative;
@@ -331,6 +331,13 @@ button {
 }
 .breadcrumb a:hover {
   color: #0369a1;
+}
+.section-divider {
+  width: 72px;
+  height: 4px;
+  margin: 0 auto;
+  background: #0369a1;
+  border-radius: 2px;
 }
 .cta-banner {
   background: #0369a1;
