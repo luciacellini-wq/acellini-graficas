@@ -80,20 +80,17 @@ button {
 }
 .logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
 }
-.logo-line-1 {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 19px;
-  letter-spacing: .02em;
+.logo .logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
 }
-.logo-line-2 {
-  font-size: 11px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #5b6168;
+@media (max-width: 620px) {
+  .logo .logo-img {
+    height: 34px;
+  }
 }
 .navbar-nav {
   display: flex;

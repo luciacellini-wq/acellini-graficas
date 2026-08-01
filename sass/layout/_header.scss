@@ -25,21 +25,16 @@
 
 .logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
 
-  &-line-1 {
-    font-family: $font-head;
-    font-weight: 700;
-    font-size: 19px;
-    letter-spacing: .02em;
-  }
+  .logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
 
-  &-line-2 {
-    font-size: 11px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: $gray-600;
+    @media (max-width: $bp-mobile) {
+      height: 34px;
+    }
   }
 }
 
